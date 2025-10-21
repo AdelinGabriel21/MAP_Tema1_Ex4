@@ -33,4 +33,17 @@ public class Ex4 {
         }
         return max;
     }
+
+    public int maxBudget(int budget, int[] keyboards, int[] usb) {
+        int maxSum = -1;
+        for (int kCost : keyboards) {
+            for (int uCost : usb) {
+                int sum = kCost + uCost;
+                if (sum <= budget && sum > maxSum) {
+                    maxSum = sum;
+                }
+            }
+        }
+        return maxSum;
+    }
 }
